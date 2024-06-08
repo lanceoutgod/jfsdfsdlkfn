@@ -1,0 +1,346 @@
+*
+    box-sizing: border-box
+
+body
+    margin: 0
+    padding: 0
+    display: flex
+    flex-direction: column
+    background: #EEEDEA
+    min-height: 100vh
+
+.content
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+
+.container
+    width: 1128px
+    margin-left: auto
+    margin-right: auto
+    z-index: 2
+
+.slick-dots 
+    bottom: 6px!important
+    height: 12px!important
+    li 
+        height: 12px!important
+        margin-right: 12px!important
+        &:last-child
+            margin-right: 0!important
+        button
+            &::before
+                content: ''!important
+                width: 32px!important
+                height: 2px!important
+                background: #C0BFBC!important
+        &.slick-active
+            button
+                &::before
+                    background: #343230!important
+
+@keyframes fadein
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+.overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: #67676729
+    z-index: 1111
+    backdrop-filter: blur(3px)
+    opacity: 1
+    transition: all .4s ease-in-out
+
+.is-hidden
+    opacity: 0!important
+    z-index: 1!important
+
+.details-modal
+    transition: all .4s ease-in-out
+    opacity: 1
+    z-index: 2000
+    background: #EEEDEA
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.02)
+    width: 744px
+    height: 472px
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    padding: 16px
+    max-height: 100vh!important
+    &--info
+        padding: 8px 16px
+        &__title
+            font-family: 'JetBrains Mono' , sans-serif
+            font-weight: 500
+            font-size: 14px
+            line-height: 22px
+            letter-spacing: 4%
+            color: #514F4CB8
+            margin-bottom: 2px
+        &__description
+            font-family: 'JetBrains Mono' , sans-serif
+            font-weight: 500
+            font-size: 16px
+            line-height: 24px
+            letter-spacing: 4%
+            color: #343330
+            margin-bottom: 24px
+    &__img
+        object-fit: contain
+        height: 100%
+    &__close
+        height: 48px
+        width: 48px
+        position: absolute
+        top: 0
+        right: -56px
+        display: flex
+        justify-content: center
+        align-items: center
+        background: #EEEDEA
+        cursor: pointer
+
+
+.header
+    background-color: #343230
+    height: 36px
+    text-align: center
+    padding-top: 7px
+    padding-bottom: 7px
+    margin-bottom: 40px
+    &__title
+        font-family: 'JetBrains Mono' , sans-serif
+        font-weight: 500
+        font-size: 14px
+        line-height: 22px
+        letter-spacing: 4%
+        color: #FFFFFF
+
+.hero
+    margin-bottom: 64px
+    text-align: center
+
+.cards
+    display: flex
+    margin-bottom: 237px
+    .container
+        display: flex
+        flex-direction: row 
+        justify-content: space-between
+    &--item
+        display: flex
+        flex-direction: column
+        position: relative
+        width: 553px
+        &__button
+            position: absolute
+            top: 16px
+            right: 16px
+            cursor: pointer
+            z-index: 1000
+    .swiper
+        width: 100%
+        height: 732px
+    .swiper-slide
+        width: 100%
+        height: 732px
+        position: relative
+        margin-bottom: 16px
+        img
+            width: 100%
+            height: 100%
+        &__button
+            position: absolute
+            top: 16px
+            right: 16px
+            cursor: pointer
+    &--bottom
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        margin-top: 16px
+        &__title
+            font-family: 'JetBrains Mono' , sans-serif
+            font-weight: 500
+            font-size: 14px
+            line-height: 22px
+            letter-spacing: 4%
+            color: rgba(81, 79, 76, 0.72)
+            margin-bottom: 4px
+        &__price
+            font-family: 'JetBrains Mono' , sans-serif
+            font-weight: 500
+            font-size: 16px
+            line-height: 24px
+            letter-spacing: 4%
+            color: rgba(52, 51, 48, 1)
+    &__btn
+        font-family: 'JetBrains Mono' , sans-serif
+        font-weight: 500
+		text-decoration: none
+        font-size: 14px
+        line-height: 22px
+        letter-spacing: 4%
+        width: 134px
+        text-align: center
+        display: flex
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        color: rgba(81, 79, 76, 0.72)
+        border: 1px solid rgba(124, 123, 120, 0.72)
+        transition: all .2s ease-in-out
+        &:hover
+            color: rgba(81, 79, 76, 0.9)
+            border: 1px solid rgba(124, 123, 120, 0.9)
+
+.footer
+    display: flex
+    border-top: 1px solid rgba(192, 191, 188, 1)
+    padding: 12px 0
+    margin-top: auto
+    .container
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+    &__text
+        font-family: 'JetBrains Mono' , sans-serif
+        font-weight: 500
+        font-size: 14px
+        line-height: 22px
+        letter-spacing: 4%
+        color: rgba(81, 79, 76, 0.72)
+    &--links
+        display: flex
+        flex-direction: row
+        align-items: center
+        &__link
+            display: flex
+            flex-direction: row
+            align-items: center
+            a
+                text-decoration: none!important
+                font-family: 'JetBrains Mono' , sans-serif
+                font-weight: 500
+                font-size: 14px
+                line-height: 22px
+                letter-spacing: 4%
+                color: rgba(81, 79, 76, 0.72)
+                display: flex
+                flex-direction: row
+                align-items: center
+                transition: all .2s ease-in-out
+                svg
+                    margin-left: 6px
+                path
+                    stroke: rgba(81, 79, 76, 0.72)!important
+                    transition: all .2s ease-in-out
+                &:hover
+                    color: rgba(81, 79, 76, 0.9)
+                    path
+                        stroke: rgba(81, 79, 76, 0.9)!important
+                        transition: all .2s ease-in-out
+            &:last-child
+                margin-left: 24px
+
+@media screen and ( max-width: 1200px )
+    .container
+        width: 90%
+    .cards
+        &--item
+            width: 387px
+            margin-right: 16px
+            &:last-child
+                margin-right: 0
+        .container
+            justify-content: center
+        .swiper
+            height: 512px
+        .swiper-slide
+            height: 512px
+            position: relative
+            margin-bottom: 16px
+        &__btn
+            width: 100px
+            height: 40px
+            margin: auto 0
+
+@media screen and ( max-width: 880px )
+    .details-modal
+        width: 80%
+        height: unset
+        flex-direction: column-reverse
+        justify-content: center
+        &--info
+            padding: 8px 16px
+        &__img
+            height: 300px
+        &__close
+            height: 32px
+            width: 32px
+            position: absolute
+            top: 0
+            right: -40px
+            display: flex
+            justify-content: center
+            align-items: center
+            background: #EEEDEA
+            cursor: pointer
+
+@media screen and ( max-width: 800px )
+    .cards
+        &--item
+            width: 553px
+            margin: 0 auto
+            &:last-child
+                margin-top: 32px
+                margin-right: auto
+        .container
+            justify-content: center
+            flex-direction: column
+        .swiper
+            height: 732px
+        .swiper-slide
+            height: 732px
+        &__btn
+            width: 143px
+            height: 100%
+
+
+@media screen and ( max-width: 600px )
+    .header
+        margin-bottom: 30px
+    .hero
+        margin-bottom: 48px
+    .cards
+        margin-bottom: 140px
+        &--item
+            width: 331px
+        .swiper
+            height: 439px
+        .swiper-slide
+            height: 439px
+        &__btn
+            width: 100px
+            height: 40px
+            margin: auto 0
+
+@media screen and ( max-width: 430px )
+    .footer
+        .container
+            flex-direction: column
+            justify-content: center
+        &__text
+            margin-bottom: 12px
